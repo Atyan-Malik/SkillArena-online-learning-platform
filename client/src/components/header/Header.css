@@ -1,0 +1,150 @@
+/* GENERAL THEME COLORS */
+:root {
+  --red: #ff3b30;
+  --blue: #147aff;
+  --black: #000;
+  --white: #fff;
+}
+
+/* HEADER MAIN */
+.sa-header {
+  background-color: #102C4A;
+  /* color: var(--white); */
+  width: 100%;
+  padding: 15px 0;
+
+  /* box-shadow: 0 4px 12px blue; */
+}
+.sa-nav a.active-link{
+color:#ff3b30;
+border-bottom: 2px solid #ff3b30;
+}
+.sa-container {
+  max-width: 1250px;
+  margin: auto;
+  padding: 0 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LOGO */
+.sa-logo {
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.sa-logo .red {
+  color: var(--red);
+}
+
+.sa-logo .blue {
+  color: var(--blue);
+}
+
+/* NAVIGATION */
+.sa-nav {
+  display: flex;
+  gap: 30px;
+}
+
+.sa-nav a {
+  text-decoration: none;
+  color: #EAEAEA;
+  font-size: 16px;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.sa-nav a:hover {
+  color: var(--red);
+}
+.sa-nav a:active {
+  color: var(--red);
+}
+
+/* BUTTONS */
+.sa-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+
+
+.btn-filled {
+  padding: 8px 22px;
+  background: var(--red);
+  border: none;
+  color: var(--white);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-filled:hover {
+  background: #d13028;
+}
+
+/* MOBILE ICON */
+.sa-mobile-icon {
+  display: none;
+  color: var(--white);
+  cursor: pointer;
+}
+
+/* MOBILE MENU */
+.sa-mobile-menu {
+  display: none;
+  flex-direction: column;
+  padding: 20px;
+  background: var(--black);
+  gap: 15px;
+}
+
+.sa-mobile-menu a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 17px;
+  transition: 0.3s;
+}
+
+.sa-mobile-menu a:hover {
+  color: var(--red);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .sa-nav,
+  .sa-buttons {
+    display: none;
+  }
+
+  .sa-mobile-icon {
+    display: block;
+    color: #000;
+  }
+
+  .sa-mobile-menu {
+    display: flex;
+  }
+
+  .w-full {
+    width: 100%;
+  }
+  .btn-outline{
+padding: 12px 22px;
+  background: var(--red);
+  border: none;
+  color: var(--white);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  }
+  .sa-mobile-menu a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 17px;
+  transition: 0.3s;
+  text-align: center;
+}
+}

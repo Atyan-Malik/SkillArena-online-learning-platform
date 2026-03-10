@@ -1,0 +1,102 @@
+/* Container */
+.my-enrollments-container {
+  padding: 30px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+}
+
+/* Headings */
+.my-enrollments-container h1 {
+  font-size: 2rem;
+  color: #111827;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* Courses grid */
+.enrollments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Individual course card */
+.enrollment-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.enrollment-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Course title */
+.enrollment-card h3 {
+  font-size: 1.25rem;
+  color: #1f2937;
+  margin-bottom: 10px;
+}
+
+/* Course description */
+.enrollment-card p {
+  font-size: 0.95rem;
+  color: #4b5563;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+/* Enrolled date */
+.enrolled-date {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+/* Enroll button */
+.enroll-btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.enroll-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Enroll / Already enrolled */
+.enroll-btn.active {
+  background-color: #10b981;
+  color: #fff;
+}
+
+.enroll-btn.disabled {
+  background-color: #9ca3af;
+  color: #ffffff;
+  cursor: not-allowed;
+}
+
+/* Message */
+.enroll-message {
+  margin-top: 20px;
+  font-size: 0.95rem;
+  color: #10b981;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .enrollments-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}

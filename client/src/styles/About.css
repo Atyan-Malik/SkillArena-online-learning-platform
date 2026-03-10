@@ -1,0 +1,150 @@
+.sa-about {
+  padding: 80px 20px;
+  background: #f8fafc;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.about-left {
+  flex: 1;
+}
+
+.about-left img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.about-right {
+  flex: 1;
+}
+
+.about-right h2 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.about-right h2 span {
+  color: #2563eb;
+}
+
+.about-subtext {
+  margin: 20px 0 30px;
+  color: #555;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.about-features {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  color: #333;
+}
+
+.about-stats {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  flex: 1;
+  min-width: 120px;
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-card h3 {
+  font-size: 22px;
+  margin: 10px 0 5px;
+}
+
+.stat-card p {
+  font-size: 14px;
+  color: #666;
+}
+
+.about-btn {
+  padding: 12px 28px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.about-btn:hover {
+  background: #1e40af;
+}
+
+
+
+/* Tablets */
+@media (max-width: 992px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-right h2 {
+    font-size: 32px;
+  }
+
+  .about-stats {
+    justify-content: center;
+  }
+
+  .feature {
+    justify-content: center;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .sa-about {
+    padding: 60px 15px;
+  }
+
+  .about-right h2 {
+    font-size: 26px;
+  }
+
+  .about-subtext {
+    font-size: 14px;
+  }
+
+  .stat-card {
+    padding: 15px;
+  }
+
+  .about-btn {
+    width: 100%;
+  }
+}

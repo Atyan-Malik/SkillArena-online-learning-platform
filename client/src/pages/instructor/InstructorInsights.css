@@ -1,0 +1,106 @@
+.insights-page {
+  padding: 30px;
+  width: 100%;
+  background: #f8f9fb;
+}
+
+.insights-header h2 {
+  font-size: 30px;
+  color: #222;
+}
+
+.insights-header p {
+  color: #666;
+  margin-top: 5px;
+}
+
+.insights-kpis {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.kpi-card {
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.kpi-card h3 {
+  font-size: 28px;
+  color: #e63946; 
+}
+
+.kpi-card p {
+  color: #555;
+  margin-top: 6px;
+}
+
+.insights-chart {
+  margin-top: 40px;
+}
+
+.chart-box {
+  height: 260px;
+  background: #fff;
+  border-radius: 12px;
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-size: 16px;
+  border: 1px dashed #ccc;
+}
+
+.course-performance {
+  margin-top: 40px;
+}
+
+.course-performance table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 12px;
+}
+
+.course-performance th,
+.course-performance td {
+  padding: 14px 18px;
+  border-bottom: 1px solid #eee;
+}
+
+.course-performance th {
+  text-align: left;
+  background: #f1f1f1;
+  color: #333;
+  font-weight: 600;
+}
+
+.student-activity {
+  margin-top: 40px;
+}
+
+.student-activity ul {
+  margin-top: 14px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  list-style: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.student-activity ul li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  color: #444;
+}
+
+.student-activity ul li:last-child {
+  border-bottom: none;
+}

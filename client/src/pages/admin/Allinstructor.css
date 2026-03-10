@@ -1,0 +1,144 @@
+.instructor-list-page {
+  padding: 30px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+}
+
+.instructors-header h2 {
+  font-size: 2rem;
+  color: #111827;
+  margin-bottom: 5px;
+}
+
+.instructors-header p {
+  font-size: 0.95rem;
+  color: #4b5563;
+  margin-bottom: 25px;
+}
+
+.instructors-controls {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  flex: 1;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-input:focus {
+  border-color: #3b82f6;
+}
+
+.instructors-table-container {
+  overflow-x: auto;
+}
+
+.instructors-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.instructors-table th,
+.instructors-table td {
+  padding: 15px 20px;
+  text-align: left;
+}
+
+.instructors-table thead {
+  background-color: #3b82f6;
+  color: #fff;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.instructors-table tbody tr {
+  border-bottom: 1px solid #e5e7eb;
+  transition: background 0.2s;
+}
+
+.instructors-table tbody tr:hover {
+  background-color: #f1f5f9;
+  transform: translateY(-1px);
+}
+
+.active-status {
+  background-color: #10b981;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.suspended-status {
+  background-color: #ef4444;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.actions button {
+  margin-right: 8px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.edit-btn {
+  background-color: #3b82f6;
+  color: #fff;
+}
+
+.edit-btn:hover {
+  background-color: #2563eb;
+  transform: translateY(-1px);
+}
+
+.ban-btn {
+  background-color: #ef4444;
+  color: #fff;
+}
+
+.ban-btn:hover {
+  background-color: #dc2626;
+  transform: translateY(-1px);
+}
+
+.unban-btn {
+  background-color: #10b981;
+  color: #fff;
+}
+
+.unban-btn:hover {
+  background-color: #059669;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .instructors-controls {
+    flex-direction: column;
+  }
+
+  .instructors-table th,
+  .instructors-table td {
+    padding: 12px 10px;
+  }
+}

@@ -1,0 +1,162 @@
+:root {
+  --blue: #2563eb;
+  --red: #dc2626;
+  --dark: #0f172a;
+  --gray: #94a3b8;
+  --light-gray: #f1f5f9;
+}
+
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 260px;
+  background: var(--dark);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  transition: transform 0.3s ease;
+}
+
+.dashboard-layout.collapsed .sidebar {
+  transform: translateX(-100%);
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 24px 16px;
+}
+
+.logo-icon {
+  background: linear-gradient(135deg, var(--blue), var(--red));
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0 12px;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--gray);
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.sidebar-link:hover {
+  background: rgba(37, 99, 235, 0.15);
+  color: white;
+}
+
+.sidebar-link.active {
+  background: rgba(37, 99, 235, 0.25);
+  color: white;
+  border-left: 4px solid var(--blue);
+}
+
+.sidebar-footer {
+  padding: 16px 12px 24px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.logout {
+  color: #f3e0e0;
+  margin-top: 5px;
+  border: none;
+  
+}
+
+.logout:hover {
+  background: rgba(212, 21, 21, 0.2);
+  color: white;
+
+}
+
+.main-area {
+  margin-left: 260px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  transition: margin-left 0.3s ease;
+}
+
+.dashboard-layout.collapsed .main-area {
+  margin-left: 0;
+}
+
+.admin-header {
+  height: 64px;
+  background: var(--light-gray);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--dark);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.notification-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--dark);
+}
+
+.profile {
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.main-content {
+  flex: 1;
+  padding: 24px;
+  background: var(--light-gray);
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    transform: translateX(-100%);
+    position: fixed;
+    z-index: 50;
+  }
+
+  .dashboard-layout.collapsed .sidebar {
+    transform: translateX(0);
+  }
+
+  .main-area {
+    margin-left: 0;
+  }
+}

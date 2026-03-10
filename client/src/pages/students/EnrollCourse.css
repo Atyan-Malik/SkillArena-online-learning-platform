@@ -1,0 +1,111 @@
+.enroll-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 20px;
+  background: linear-gradient(135deg, #f0f4ff, #ffffff);
+  min-height: 90vh;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+.enrollcourse-card {
+  background-color: #ffffff;
+  max-width: 650px;
+  width: 100%;
+  padding: 40px 50px;
+  border-radius: 16px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: all 0.3s ease;
+  gap: 20px;
+}
+
+.enrollcourse-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+}
+
+.enrollcourse-thumbnail {
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+}
+
+.enrollcourse-title {
+  font-size: 2.4rem;
+  margin-bottom: 15px;
+  color: #1a1a1a;
+  font-weight: 700;
+}
+.enrollcourse-card h3{
+    color: brown;
+}
+
+
+.enrollcourse-description {
+  font-size: 1.15rem;
+  color: #555;
+  margin-bottom: 25px;
+  line-height: 1.75;
+}
+
+.enrollcourse-price {
+  font-size: 1.7rem;
+  color: #0056d2;
+  font-weight: 600;
+  margin-bottom: 35px;
+}
+
+.enroll-btn {
+  padding: 14px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(90deg, #0066ff, #00d4ff);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 102, 255, 0.3);
+}
+
+.enroll-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(0, 102, 255, 0.35);
+}
+
+.enroll-btn:disabled {
+  background: #a0a0a0;
+  cursor: not-allowed;
+  opacity: 0.7;
+  box-shadow: none;
+}
+
+.loading-text {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #0066ff;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .course-card {
+    padding: 30px 25px;
+  }
+
+  .course-title {
+    font-size: 2rem;
+  }
+
+  .course-price {
+    font-size: 1.5rem;
+  }
+
+  .enroll-btn {
+    width: 100%;
+    padding: 12px 0;
+  }
+}

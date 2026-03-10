@@ -1,0 +1,131 @@
+
+.sidebar {
+  width: 200px;
+  position: fixed;
+  top: 70px;
+  bottom: 60px; 
+  background-color: #0f172a;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 24px 20px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.logo-icon {
+  background: linear-gradient(135deg, var(--blue), var(--red));
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.logo-text {
+  letter-spacing: 0.5px;
+  color: var(--white);
+}
+
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0 12px;
+  flex: 1; 
+  overflow-y: auto; 
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--gray);
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.sidebar-link:hover {
+  background: rgba(37, 99, 235, 0.15);
+  color: var(--white);
+}
+
+.sidebar-link.active {
+  background: linear-gradient(
+    90deg,
+    rgba(37, 99, 235, 0.35),
+    transparent
+  );
+  color: var(--white);
+  border-left: 4px solid var(--blue);
+  font-weight: 600;
+}
+
+
+.sidebar-footer {
+  padding: 16px 12px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logout {
+  color: var(--white);
+  background-color: #ec2222;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.log-btn{
+color: var(--white);
+}
+.logout:hover {
+  background: rgba(220, 38, 38, 0.2);
+  color: var(--white);
+}
+
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+    top: 70px; 
+    bottom: 60px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .sidebar-menu {
+    flex-direction: row;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .sidebar-link {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .sidebar-footer {
+    display: none;
+  }
+}

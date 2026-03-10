@@ -1,0 +1,120 @@
+.admin-courses-page {
+  padding: 30px;
+  background: #f8f9fb;
+  width: 100%;
+}
+
+.courses-header h2 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #1d3557;
+}
+
+.courses-header p {
+  color: #666;
+  margin-top: 5px;
+}
+
+.courses-controls {
+  margin-top: 25px;
+  display: flex;
+  gap: 12px;
+}
+
+.search-input {
+  padding: 10px 15px;
+  width: 280px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: #1d3557;
+}
+
+.filter-select {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+}
+
+.courses-table-container {
+  margin-top: 30px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.courses-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.courses-table th {
+  background: #f1f1f1;
+  padding: 14px 18px;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+}
+
+.courses-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid #eee;
+  color: #444;
+}
+
+.status {
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status.published {
+  background: #d4f8e8;
+  color: #0a8a4a;
+}
+
+.status.pending {
+  background: #fff4d6;
+  color: #b8860b;
+}
+
+.status.rejected {
+  background: #ffe1e1;
+  color: #c1121f;
+}
+
+.actions button {
+  margin-right: 10px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.approve-btn {
+  background: #2a9d8f;
+  color: white;
+}
+
+.reject-btn {
+  background: #e76f51;
+  color: white;
+}
+
+.delete-btn {
+  background: #c1121f;
+  color: white;
+}
+
+.actions button:hover {
+  opacity: 0.85;
+}

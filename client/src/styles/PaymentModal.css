@@ -1,0 +1,104 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(4px); 
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-box {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 30px 25px;
+  width: 350px;
+  max-width: 90%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  transform: translateY(-50px);
+  animation: slideDown 0.4s ease forwards;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.modal-box h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.modal-box p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  font-weight: 500;
+  color: #555;
+}
+
+.modal-box select {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 12px;
+  border: none;
+  box-shadow: inset 2px 2px 5px rgba(0,0,0,0.1),
+              inset -2px -2px 5px rgba(255,255,255,0.7);
+  font-size: 1rem;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.modal-box select:focus {
+  outline: none;
+  box-shadow: 0 0 15px rgba(74,108,247,0.5);
+}
+
+.modal-box .confirm-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 15px;
+  background: linear-gradient(145deg, #4a6cf7, #2f54eb);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.modal-box .confirm-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.25);
+}
+
+.modal-box .cancel-btn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 15px;
+  background: #eee;
+  color: #333;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.modal-box .cancel-btn:hover {
+  background: #ddd;
+  transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}

@@ -1,0 +1,105 @@
+:root {
+  --blue: #2563eb;
+  --red: #dc2626;
+  --black: #0f172a;
+  --gray: #64748b;
+  --light-gray: #f1f5f9;
+}
+
+.auth-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #0f172a;
+  padding: 20px;
+  background-image: url("/login2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.auth-container {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.auth-container h1 {
+  font-size: 2rem;
+  color: var(--black);
+  margin-bottom: 20px;
+}
+
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.register-img{
+  width: 200px;
+  height: 100px;
+  position: absolute;
+  top:11rem;
+}
+.auth-container input,
+.auth-container select {
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--gray);
+  font-size: 1rem;
+  outline: none;
+}
+
+.auth-container input:focus,
+.auth-container select:focus {
+  border-color: var(--blue);
+}
+
+.auth-container button {
+  padding: 12px 16px;
+  background: var(--red);
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.auth-container button:hover {
+  background: #b91c1c;
+}
+
+
+.auth-container p {
+  margin-top: 12px;
+  color: var(--gray);
+  font-size: 0.95rem;
+}
+.login-img{
+width: 200px;
+height: 100px;
+border-radius: 30px;
+
+border: 1px solid black;
+
+}
+.auth-container p a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.auth-container p a:hover {
+  text-decoration: underline;
+}
+
+.error-msg {
+  color: var(--red);
+  font-weight: 500;
+  margin-bottom: 10px;
+}

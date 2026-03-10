@@ -1,0 +1,163 @@
+.earnings-container {
+  padding: 30px 40px;
+  background: #f6f7fb;
+  min-height: 100vh;
+}
+
+.earnings-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #222;
+}
+
+.earnings-subtitle {
+  color: #666;
+  margin-top: 5px;
+  font-size: 15px;
+}
+
+.earnings-stats-grid {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+}
+
+.earn-card {
+  background: white;
+  padding: 22px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  border: 1px solid #e4e4e4;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: 0.3s;
+}
+
+.earn-card:hover {
+  transform: translateY(-3px);
+}
+
+.earn-card h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #222;
+}
+
+.earn-card p {
+  font-size: 14px;
+  color: #777;
+}
+
+.earn-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-blue { background: #e6f0ff; color: #1d4ed8; }
+.icon-green { background: #e8ffe8; color: #16a34a; }
+.icon-purple { background: #f6e6ff; color: #7e22ce; }
+
+.withdraw-btn {
+  margin-top: 35px;
+  padding: 13px 22px;
+  background: #e63946;
+  color: white;
+  border-radius: 12px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s;
+}
+
+.withdraw-btn:hover {
+  background: #c92f3b;
+}
+
+.earnings-main-grid {
+  margin-top: 40px;
+  display: grid;
+  gap: 25px;
+  grid-template-columns: 1.4fr 1fr;
+}
+
+.earn-chart-box,
+.payout-history-box {
+  background: white;
+  border-radius: 14px;
+  padding: 25px;
+  border: 1px solid #e4e4e4;
+  box-shadow: 0 5px 14px rgba(0,0,0,0.05);
+}
+
+.earn-chart-box h2,
+.payout-history-box h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: #222;
+}
+
+.chart-placeholder {
+  height: 260px;
+  border-radius: 12px;
+  border: 2px dashed #c5c5c5;
+  background: #fafafa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #777;
+  font-size: 14px;
+}
+
+.payout-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.payout-table th {
+  text-align: left;
+  padding: 14px 10px;
+  color: #444;
+  font-size: 15px;
+  border-bottom: 2px solid #efefef;
+}
+
+.payout-table td {
+  padding: 14px 10px;
+  color: #555;
+  font-size: 14px;
+  border-bottom: 1px solid #f3f3f3;
+}
+
+.payout-badge {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.payout-badge.paid {
+  background: #e8ffe9;
+  color: #16a34a;
+}
+
+.payout-badge.pending {
+  background: #fff5e1;
+  color: #d97706;
+}
+.chart-placeholder {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+}
