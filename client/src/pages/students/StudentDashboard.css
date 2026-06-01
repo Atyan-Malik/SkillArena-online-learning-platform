@@ -71,6 +71,12 @@
 .recent-courses tr:nth-child(even) {
   background-color: #f9f9f9;
 }
+[data-theme="dark"] {
+  --bg-color: #0f172a;
+  --text-color: white;
+  
+}
+
 
 @media screen and (max-width: 768px) {
   .stats-grid {

@@ -6,7 +6,6 @@ import {
   GraduationCap,
   Heart,
   CreditCard,
-  Settings,
   LogOut
 } from "lucide-react";
 import "./StudentSidebar.css";
@@ -65,7 +64,7 @@ const Sidebar = () => {
 
         <button onClick={handleLogout} className="sidebar-link logout">
           <LogOut size={18} />
-         <span log-btn>Logout</span> 
+         <span>Logout</span> 
         </button>
       </div>
     </aside>

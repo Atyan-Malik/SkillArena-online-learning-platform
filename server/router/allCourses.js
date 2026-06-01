@@ -1,5 +1,5 @@
 import express from "express";
-import { getAllCourses } from "../controller/courses.controller.js"
+import { getAllCourses ,deleteCourses } from "../controller/courses.controller.js"
 import Courses from "../model/course.js";
 const router = express.Router();
 
@@ -13,6 +13,8 @@ router.get("/:id", async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 });
+router.delete("/:id",deleteCourses )
+
 
 
 export default router;

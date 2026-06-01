@@ -3,24 +3,20 @@ import { useNavigate } from "react-router-dom";
 import {
   LayoutDashboard,
   BookOpen,
-  PlusCircle,
   Users,
   CreditCard,
-  Star,
-  BarChart2,
-  Settings,
-  LogOut
+  LogOut,
 } from "lucide-react";
 import "./Instructor.css";
 
 const InstructorSidebar = () => {
-  
-   const navigate = useNavigate();
-    const handleLogout = () => {
+  const navigate = useNavigate();
+  const handleLogout = () => {
     localStorage.removeItem("token");
-
+    const check = localStorage.getItem("token");
+    console.log("After logout:", check);
     navigate("/register");
-    }
+  };
 
   return (
     <aside className="sidebar">
@@ -35,7 +31,10 @@ const InstructorSidebar = () => {
           Dashboard
         </NavLink>
 
-        <NavLink to="/dashboard/instructor/createcourses" className="sidebar-link">
+        <NavLink
+          to="/dashboard/instructor/createcourses"
+          className="sidebar-link"
+        >
           <BookOpen size={18} />
           Create Courses
         </NavLink>
@@ -44,28 +43,22 @@ const InstructorSidebar = () => {
           All Courses
         </NavLink>
 
-      
-
-        <NavLink to="/dashboard/instructor/managestudents" className="sidebar-link">
+        <NavLink
+          to="/dashboard/instructor/managestudents"
+          className="sidebar-link"
+        >
           <Users size={18} />
-         Students List
+          Students List
         </NavLink>
 
         <NavLink to="/dashboard/instructor/earnings" className="sidebar-link">
           <CreditCard size={18} />
           Earnings
         </NavLink>
-       
-
-       
-
-      
       </nav>
 
       <div className="sidebar-footer">
-       
-
-        <button onClick={ handleLogout} className="sidebar-link logout">
+        <button onClick={handleLogout} className="sidebar-link logout">
           <LogOut size={18} />
           Logout
         </button>

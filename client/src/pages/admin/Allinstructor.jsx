@@ -6,7 +6,22 @@ const InstructorList = () => {
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
 
+const handleDelete = async (id) => {
+  try {
+    const res = await fetch(`http://localhost:15000/api/users/${id}`, {
+      method: "DELETE",
+    });
 
+    const data = await res.json();
+    console.log(data);
+
+    // update UI after delete
+    setInstructors((prev) => prev.filter((user) => user._id !== id));
+
+  } catch (err) {
+    console.error(err);
+  }
+};
   useEffect(() => {
     const fetchInstructors = async () => {
       try {
@@ -87,7 +102,7 @@ const InstructorList = () => {
                   </td>
                   <td>{new Date(inst.createdAt).toLocaleDateString()}</td>
                   <td className="actions">
-                    <button className="edit-btn">Edit</button>
+                    <button onClick={() => handleDelete(inst._id)} className="edit-btn">remove</button>
                     {inst.status === "active" ? (
                       <button className="ban-btn">Suspend</button>
                     ) : (

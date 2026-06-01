@@ -60,7 +60,7 @@ const handleSubmit = async (e) => {
     );
 
     
-    if (data.role === "student") navigate("/dashboard");
+    if (data.role === "student") navigate("/dashboard/student");
     if (data.role === "instructor") navigate("/dashboard/instructor");
     if (data.role === "admin") navigate("/dashboard/admin");
 
@@ -103,7 +103,7 @@ const handleSubmit = async (e) => {
           <select name="role" value={formData.role} onChange={handleChange}>
             <option value="student">Student</option>
             <option value="instructor">Instructor</option>
-            <option value="admin">admin</option>
+          
           </select>
           <button type="submit">Register</button>
         </form>

@@ -7,11 +7,10 @@ const AdminCourses = () => {
   const [search, setSearch] = useState("");
   const [statusFilter, setStatusFilter] = useState("All");
 
-
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const res = await fetch("http://localhost:15000/api/courses"); 
+        const res = await fetch("http://localhost:15000/api/courses");
         const data = await res.json();
 
         setCourses(data.courses || data);
@@ -25,7 +24,22 @@ const AdminCourses = () => {
     fetchCourses();
   }, []);
 
-  
+  const delbtn = async (id) => {
+    try {
+      const res = await fetch(`http://localhost:15000/api/courses/${id}`, {
+        method: "DELETE",
+      });
+
+      const data = await res.json();
+      console.log(data);
+
+      // update UI after delete
+      setCourses((prev) => prev.filter((course) => course.id !== id));
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   const filteredCourses = courses.filter((course) => {
     const matchesSearch =
       course.title.toLowerCase().includes(search.toLowerCase()) ||
@@ -35,8 +49,8 @@ const AdminCourses = () => {
       statusFilter === "All"
         ? true
         : statusFilter === "Published"
-        ? course.status === "published"
-        : course.status === "draft";
+          ? course.status === "published"
+          : course.status === "draft";
 
     return matchesSearch && matchesStatus;
   });
@@ -45,13 +59,11 @@ const AdminCourses = () => {
 
   return (
     <div className="admin-courses-page">
-    
       <div className="courses-header">
         <h2> Manage Courses</h2>
         <p>View, search, and manage all courses in the system.</p>
       </div>
 
- 
       <div className="courses-controls">
         <input
           type="text"
@@ -72,7 +84,6 @@ const AdminCourses = () => {
         </select>
       </div>
 
-    
       <div className="courses-table-container">
         <table className="courses-table">
           <thead>
@@ -112,8 +123,13 @@ const AdminCourses = () => {
                   </td>
                   <td>{new Date(course.createdAt).toLocaleDateString()}</td>
                   <td className="actions">
-                    <button className="edit-btn">Edit</button>
-                    <button className="delete-btn">Delete</button>
+                 
+                    <button
+                      onClick={() => delbtn(course._id)}
+                      className="delete-btn"
+                    >
+                      Delete
+                    </button>
                   </td>
                 </tr>
               ))

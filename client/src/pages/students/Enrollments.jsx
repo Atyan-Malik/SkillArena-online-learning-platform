@@ -34,7 +34,7 @@ const EnrollCourse = () => {
 
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:15000/api/enroll-courses", {
+      const res = await fetch("http://localhost:15000/api/enrollcourses", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -51,7 +51,7 @@ const EnrollCourse = () => {
       }
 
       alert("Enrolled Successfully ");
-      navigate("/student/enrolled-courses");
+      navigate("/dashboard/enrollcourses");
     } catch (err) {
       console.log(err);
     } finally {

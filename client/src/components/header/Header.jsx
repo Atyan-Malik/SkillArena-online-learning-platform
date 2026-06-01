@@ -28,6 +28,8 @@ const Header = () => {
           <NavLink to="/paidcourses" className={navlink} >Paid Courses</NavLink>
           <NavLink to="/instructor" className={navlink} >Instructor</NavLink>
           <NavLink to="/contact" className={navlink} >Contact</NavLink>
+         
+
         </nav>
 
         {/* Buttons */}

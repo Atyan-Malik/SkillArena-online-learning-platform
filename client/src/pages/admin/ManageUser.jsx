@@ -124,7 +124,7 @@ const AdminUsers = () => {
                   </td>
                   <td>{new Date(user.createdAt).toLocaleDateString()}</td>
                   <td className="actions">
-                    <button className="edit-btn">Edit</button>
+                  
                     {user.status === "active" ? (
                       <button className="ban-btn">Suspend</button>
                     ) : (

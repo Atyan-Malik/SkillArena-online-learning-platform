@@ -11,3 +11,19 @@ export const getInstructors = async (req, res) => {
     });
   }
 };
+
+export const deleteInstructor=async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const deleteinst = await User.findByIdAndDelete(id);
+
+    if (!deleteinst) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    res.json({ message: "User deleted successfully" });
+  } catch (err) {
+    res.status(500).json({ message: "Server error" });
+  }
+};

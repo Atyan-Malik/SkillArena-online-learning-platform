@@ -13,8 +13,7 @@ const Courses = () => {
       if (!res.ok) throw new Error("Failed to load courses");
 
       const data = await res.json();
-      console.log("API Data:", data);
-      console.log(courses.thumbnail)
+     
 
       setCourses(Array.isArray(data.courses) ? data.courses : []);
     } catch (err) {

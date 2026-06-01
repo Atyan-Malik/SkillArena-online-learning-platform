@@ -15,7 +15,6 @@ const InstructorShowcase = () => {
         : data.users?.filter(u => u.role === "instructor") || [];
 
       setInstructors(instructorsOnly);
-      console.log(instructorsOnly);
     } catch (error) {
       console.error("Failed to fetch instructors", error);
     }

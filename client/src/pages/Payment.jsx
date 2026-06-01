@@ -18,9 +18,9 @@ const PaidCourses = () => {
         Paid<span className="redish">Courses</span>
       </h2>
       <h4>
-        Stop wasting time on scattered free tutorials. <br />This premium course is
-        designed to give you clarity, structure, and real-world skills that
-        companies actually demand.
+        Stop wasting time on scattered free tutorials. <br />
+        This premium course is designed to give you clarity, structure, and
+        real-world skills that companies actually demand.
       </h4>
       <div className="course-grid">
         {courses.map((course) => (

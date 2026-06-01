@@ -8,6 +8,23 @@ const ManageStudents = () => {
   const [statusFilter, setStatusFilter] = useState("");
   const [loading, setLoading] = useState(true);
 
+
+  const handleDelete = async (id) => {
+  try {
+    const res = await fetch(`http://localhost:15000/api/users/${id}`, {
+      method: "DELETE",
+    });
+
+    const data = await res.json();
+    console.log(data);
+
+    // update UI after delete
+    setStudents((prev) => prev.filter((user) => user._id !== id));
+
+  } catch (err) {
+    console.error(err);
+  }
+};
   useEffect(() => {
     const fetchUsers = async () => {
       try {
@@ -115,7 +132,7 @@ const ManageStudents = () => {
                       <Eye size={18} />
                     </button>
 
-                    <button className="remove-btn">
+                    <button onClick={()=>handleDelete(stu._id)} className="remove-btn">
                       <Trash2 size={18} />
                     </button>
                   </div>

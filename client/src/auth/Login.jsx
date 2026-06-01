@@ -28,15 +28,19 @@ const Login = () => {
   });
 
   const data = await res.json();
-
+  console.log(data)
   if (!res.ok) {
     setError(data.message || "Login failed");
   } else {
     if (data.token) {
-      localStorage.setItem("userInfo", JSON.stringify(data));
-    }
+  localStorage.setItem("token", data.token);
+  localStorage.setItem("user", JSON.stringify(data.user));
+}
 
     navigate("/dashboard");
+
+
+
   }
 } catch (err) {
   setError("Server error");

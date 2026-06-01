@@ -6,10 +6,6 @@ import {
   LayoutDashboard,
   Users,
   BookOpen,
-  Layers,
-  CreditCard,
-  Star,
-  BarChart2,
   Settings,
   LogOut
 } from "lucide-react";
@@ -18,8 +14,9 @@ import "./AdminDashboard.css";
 const AdminSidebar = () => {
    const navigate = useNavigate();
     const handleLogout = () => {
-    localStorage.removeItem("token");
-
+      localStorage.removeItem("token");
+ const check = localStorage.getItem("token");
+  console.log("After logout:", check);
     navigate("/register");
   };
 
