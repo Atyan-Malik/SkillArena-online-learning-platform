@@ -1,0 +1,30 @@
+groups:
+  - name: node-alerts
+
+    rules:
+      - alert: HighMemoryUsage
+        expr: process_resident_memory_bytes > 100000000
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High Memory Usage"
+          description: "Node.js memory usage exceeded 100MB"
+
+      - alert: HighCPUUsage
+        expr: rate(process_cpu_seconds_total[1m]) * 100 > 80
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High CPU Usage"
+          description: "Node.js CPU usage exceeded 80%"
+
+      - alert: BackendDown
+        expr: up{job="backend"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Backend Down"
+          description: "The backend service is unreachable."

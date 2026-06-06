@@ -1,0 +1,19 @@
+global:
+  smtp_smarthost: 'smtp.gmail.com:587'      # Your SMTP server
+  smtp_from: 'atyanmalik8@gmail.com'           # Sender email
+  smtp_auth_username: 'atyanmalik8@gmail.com'  # SMTP username
+  smtp_auth_password: 'jjhw pnfp cfpm zoeh'   # Gmail App Password (not your login password)
+  smtp_require_tls: true
+
+route:
+  receiver: "email-alert"
+  group_by: ['alertname']
+  group_wait: 30s
+  group_interval: 5m
+  repeat_interval: 1h
+
+receivers:
+  - name: "email-alert"
+    email_configs:
+      - to: 'atyanshahid@gmail.com'           # Who receives the alert
+        send_resolved: true                  # Notify when alert resolves

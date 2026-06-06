@@ -1,4 +1,5 @@
 import express from "express";
+import client from "prom-client";
 import dotenv from "dotenv";
 import cors from "cors";
 import connectDB from "./db.js";
@@ -21,6 +22,7 @@ import path from "path";
 import enrollmentRoutes from "./router/enrollmentRoutes.js";
 
 dotenv.config();
+client.collectDefaultMetrics();
 
 const app = express();
 app.use(express.json());
@@ -38,7 +40,10 @@ app.use(
     credentials: true,
   }),
 );
-
+app.get("/metrics", async (req, res) => {
+  res.set("Content-Type", client.register.contentType);
+  res.end(await client.register.metrics());
+});
 app.use("/api/users", userRoutes);
 app.use("/api/contact", contactRoutes);
 
