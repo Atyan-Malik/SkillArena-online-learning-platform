@@ -25,7 +25,7 @@ const EnrollCourse = () => {
   }, [id]);
 
   const handleEnroll = async () => {
-    navigate("/dashboard/enrollcourses")
+    navigate(`/dashboard/student/enrollments/${id}`)
     if (!token) {
       alert("Please login first");
       navigate("/login");
@@ -51,7 +51,7 @@ const EnrollCourse = () => {
       }
 
       alert("Enrolled Successfully ");
-      navigate("/dashboard/enrollcourses");
+      navigate(`/dashboard/student/enrollments/${id}`);
     } catch (err) {
       console.log(err);
     } finally {

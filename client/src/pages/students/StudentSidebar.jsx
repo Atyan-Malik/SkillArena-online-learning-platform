@@ -1,72 +1,115 @@
-import { NavLink } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import {
   LayoutDashboard,
   BookOpen,
   GraduationCap,
-  Heart,
+  Award,
   CreditCard,
-  LogOut
+  LogOut,
 } from "lucide-react";
 import "./StudentSidebar.css";
 
 const Sidebar = () => {
+  const navigate = useNavigate();
 
- const navigate = useNavigate();
-    const handleLogout = () => {
+  const handleLogout = () => {
     localStorage.removeItem("token");
-
-    
+    localStorage.removeItem("user");
     navigate("/register");
-    }
+  };
 
   return (
     <aside className="sidebar">
+
+      {/* Logo */}
       <div className="sidebar-logo">
-        <span className="logo-icon">          <GraduationCap size={30} color="#147aff" />
+        {/* <div className="logo-icon">
+          <GraduationCap size={27} />
+        </div> */}
+
+        <span className="logo-text">
+          Skill<span>Arena</span><br />
+          <p style={{fontSize:17}}>Dashboard</p>
         </span>
-        <span className="logo-text">SkillsArena</span>
       </div>
 
+      {/* Navigation */}
       <nav className="sidebar-menu">
-        <NavLink to="/dashboard" className="sidebar-link">
-          <LayoutDashboard size={18} />
-          Dashboard
+
+        <NavLink
+          to="/dashboard/student"
+          end
+          className={({ isActive }) =>
+            `sidebar-link ${isActive ? "active" : ""}`
+          }
+        >
+          <LayoutDashboard size={19} />
+          <span>Dashboard</span>
         </NavLink>
 
-        <NavLink to="/dashboard/instructor/courses" className="sidebar-link">
-          <BookOpen size={18} />
-          All Courses
-        </NavLink>
-        <NavLink to="/dashboard/enrollcourses" className="sidebar-link">
-          <BookOpen size={18} />
-          Enroll Courses
-        </NavLink>
-
-        <NavLink to="/dashboard/recommendedcourses" className="sidebar-link">
-          <GraduationCap size={18} />
-          All Students
+        <NavLink
+          to="/dashboard/instructor/courses"
+          className={({ isActive }) =>
+            `sidebar-link ${isActive ? "active" : ""}`
+          }
+        >
+          <BookOpen size={19} />
+          <span>All Courses</span>
         </NavLink>
 
-        <NavLink to="/dashboard/certificates" className="sidebar-link">
-          <Heart size={18} />
-          Certificates
+        <NavLink
+          to="/dashboard/student/enrollments"
+          className={({ isActive }) =>
+            `sidebar-link ${isActive ? "active" : ""}`
+          }
+        >
+          <BookOpen size={19} />
+          <span>Enrolled Courses</span>
         </NavLink>
 
-        <NavLink to="/dashboard/payments" className="sidebar-link">
-          <CreditCard size={18} />
-          Paid Courses
+        <NavLink
+          to="/dashboard/student/allstudents"
+          className={({ isActive }) =>
+            `sidebar-link ${isActive ? "active" : ""}`
+          }
+        >
+          <GraduationCap size={19} />
+          <span>All Students</span>
         </NavLink>
+
+        <NavLink
+          to="/dashboard/student/certificates"
+          className={({ isActive }) =>
+            `sidebar-link ${isActive ? "active" : ""}`
+          }
+        >
+          <Award size={19} />
+          <span>Certificates</span>
+        </NavLink>
+
+        <NavLink
+          to="/dashboard/student/payments"
+          className={({ isActive }) =>
+            `sidebar-link ${isActive ? "active" : ""}`
+          }
+        >
+          <CreditCard size={19} />
+          <span>Paid Courses</span>
+        </NavLink>
+
       </nav>
 
+      {/* Logout */}
       <div className="sidebar-footer">
-       
-
-        <button onClick={handleLogout} className="sidebar-link logout">
-          <LogOut size={18} />
-         <span>Logout</span> 
+        <button
+          onClick={handleLogout}
+          className="sidebar-link logout"
+        >
+          <LogOut size={19} />
+          <span>Logout</span>
         </button>
       </div>
+
     </aside>
   );
 };

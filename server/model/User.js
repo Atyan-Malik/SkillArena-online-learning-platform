@@ -16,22 +16,46 @@ const userSchema = new mongoose.Schema(
       lowercase: true,
       trim: true,
     },
+    phone: {
+      type: String,
+      unique: true,
+      sparse: true,
+      trim: true,
+    },
+    googleId: {
+      type: String,
+      unique: true,
+      sparse: true,
+    },
 
+    profilePicture: {
+      type: String,
+      default: "",
+    },
     password: {
       type: String,
-      required: [true, "Password is required"],
+      required: function () {
+        return !this.googleId;
+      },
       minlength: [6, "Password must be at least 6 characters"],
       select: false,
     },
+    resetPasswordToken: {
+      type: String,
+      default: null,
+    },
 
+    resetPasswordExpires: {
+      type: Date,
+      default: null,
+    },
     role: {
       type: String,
       enum: ["student", "instructor", "admin"],
       default: "student",
     },
-
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 export default mongoose.model("User", userSchema);

@@ -1,37 +1,90 @@
-/* GENERAL THEME COLORS */
+/* =========================================
+   SKILLARENA HEADER
+========================================= */
+
 :root {
+  --navy: #102c4a;
+  --navy-dark: #07182a;
+
   --red: #ff3b30;
+  --red-hover: #e83229;
+
   --blue: #147aff;
-  --black: #000;
-  --white: #fff;
+  --blue-light: #4f8cff;
+  --purple: #8065ff;
+
+  --white: #ffffff;
+  --text-light: #dbe5f0;
+  --muted: #94a3b8;
+
+  --border-light: rgba(255, 255, 255, 0.09);
 }
 
-/* HEADER MAIN */
+
+/* =========================================
+   HEADER MAIN
+========================================= */
+
 .sa-header {
-  background-color: #102C4A;
-  /* color: var(--white); */
   width: 100%;
-  padding: 15px 0;
 
-  /* box-shadow: 0 4px 12px blue; */
+  background: #102c4a;
+
+  padding: 14px 0;
+
+  border-bottom: 1px solid var(--border-light);
+
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.12);
+
+  position: relative;
+
+  z-index: 1000;
 }
-.sa-nav a.active-link{
-color:#ff3b30;
-border-bottom: 2px solid #ff3b30;
-}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
 .sa-container {
+  width: 100%;
   max-width: 1250px;
-  margin: auto;
+
+  margin: 0 auto;
+
   padding: 0 25px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  box-sizing: border-box;
 }
 
-/* LOGO */
+
+/* =========================================
+   LOGO
+========================================= */
+
 .sa-logo {
-  font-size: 28px;
+  display: flex;
+  align-items: center;
+
+  gap: 3px;
+
+  font-size: 27px;
+
   font-weight: 800;
+
+  letter-spacing: -0.7px;
+
+  white-space: nowrap;
+}
+
+.sa-logo svg {
+  margin-right: 4px;
+  flex-shrink: 0;
 }
 
 .sa-logo .red {
@@ -42,109 +95,884 @@ border-bottom: 2px solid #ff3b30;
   color: var(--blue);
 }
 
-/* NAVIGATION */
+
+/* =========================================
+   DESKTOP NAVIGATION
+========================================= */
+
 .sa-nav {
   display: flex;
-  gap: 30px;
+
+  align-items: center;
+
+  gap: 28px;
 }
 
 .sa-nav a {
+  position: relative;
+
   text-decoration: none;
-  color: #EAEAEA;
-  font-size: 16px;
-  transition: 0.3s;
-  font-weight: bold;
+
+  color: var(--text-light);
+
+  font-size: 15px;
+
+  font-weight: 500;
+
+  padding: 8px 0;
+
+  transition:
+    color 0.25s ease;
 }
+
+
+/* Hover */
 
 .sa-nav a:hover {
-  color: var(--red);
+  color: #ffffff;
 }
-.sa-nav a:active {
+
+
+/* Animated underline */
+
+.sa-nav a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 0;
+  height: 2px;
+
+  border-radius: 10px;
+
+  background: var(--red);
+
+  transition:
+    width 0.25s ease;
+}
+
+.sa-nav a:hover::after {
+  width: 100%;
+}
+
+
+/* Active link */
+
+.sa-nav a.active-link {
   color: var(--red);
 }
 
-/* BUTTONS */
+.sa-nav a.active-link::after {
+  width: 100%;
+}
+
+
+/* =========================================
+   RIGHT SIDE BUTTONS
+========================================= */
+
 .sa-buttons {
   display: flex;
-  gap: 15px;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.sa-buttons2 {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
 }
 
 
+/* =========================================
+   LOGIN / OUTLINE BUTTON
+========================================= */
+
+.btn-outline {
+  padding: 10px 22px;
+
+  min-width: 82px;
+
+  background: transparent;
+
+  border: 1px solid rgba(255, 255, 255, 0.28);
+
+  color: #ffffff;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.08);
+
+  border-color: #4f8cff;
+
+  transform: translateY(-1px);
+}
+
+/* =========================================
+   PRIMARY BUTTON
+========================================= */
 
 .btn-filled {
-  padding: 8px 22px;
-  background: var(--red);
-  border: none;
-  color: var(--white);
+  padding: 8px 20px;
+
+  background:
+    linear-gradient(
+      100deg,
+      #ff3b30,
+      #e83229
+    );
+
+  border: 1px solid rgba(255, 255, 255, 0.05);
+
+  color: #ffffff;
+
   border-radius: 8px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
   cursor: pointer;
-  transition: 0.3s;
+
+  box-shadow:
+    0 7px 18px rgba(255, 59, 48, 0.18);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
 }
 
 .btn-filled:hover {
-  background: #d13028;
+  transform: translateY(-2px);
+
+  filter: brightness(1.06);
+
+  box-shadow:
+    0 11px 25px rgba(255, 59, 48, 0.28);
 }
 
-/* MOBILE ICON */
+
+/* =========================================
+   MOBILE ICON
+========================================= */
+
 .sa-mobile-icon {
   display: none;
-  color: var(--white);
+
+  color: #ffffff;
+
   cursor: pointer;
+
+  padding: 5px;
+
+  border-radius: 8px;
+
+  transition:
+    background 0.25s ease;
 }
 
-/* MOBILE MENU */
+.sa-mobile-icon:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================
+   MOBILE MENU
+========================================= */
+
 .sa-mobile-menu {
   display: none;
+
   flex-direction: column;
-  padding: 20px;
-  background: var(--black);
-  gap: 15px;
+
+  padding: 22px;
+
+  gap: 14px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #0d2742,
+      #07182a
+    );
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.06);
+
+  box-shadow:
+    0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 .sa-mobile-menu a {
-  color: var(--white);
+  color: #dbe5f0;
+
   text-decoration: none;
-  font-size: 17px;
-  transition: 0.3s;
+
+  font-size: 16px;
+
+  font-weight: 500;
+
+  text-align: center;
+
+  padding: 8px;
+
+  border-radius: 8px;
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease;
 }
 
 .sa-mobile-menu a:hover {
-  color: var(--red);
+  color: #ffffff;
+
+  background:
+    rgba(79, 140, 255, 0.10);
 }
 
-/* RESPONSIVE */
+
+/* =========================================
+   MOBILE BUTTON WIDTH
+========================================= */
+
+.w-full {
+  width: 100%;
+}
+
+
+/* =========================================
+   PROFILE MENU
+========================================= */
+
+.profile-menu-container {
+  position: relative;
+}
+
+
+/* Profile button */
+
+.profile-button {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  background:
+    rgba(255, 255, 255, 0.07);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.12);
+
+  cursor: pointer;
+
+  padding: 3px;
+
+  color: #ffffff;
+
+  border-radius: 50%;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.profile-button:hover {
+  background:
+    rgba(79, 140, 255, 0.16);
+
+  border-color:
+    rgba(79, 140, 255, 0.4);
+
+  transform: translateY(-1px);
+}
+
+
+/* Avatar */
+
+.profile-avatar {
+  width: 38px;
+  height: 38px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+
+/* Initials */
+
+.profile-initials {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #147aff,
+      #8065ff
+    );
+
+  color: #ffffff;
+
+  font-weight: 700;
+
+  font-size: 14px;
+
+  border-radius: 50%;
+}
+
+
+/* Arrow */
+
+.rotate-arrow {
+  transform: rotate(180deg);
+}
+
+
+/* =========================================
+   PROFILE DROPDOWN
+========================================= */
+
+.profile-dropdown {
+  position: absolute;
+
+  top: 53px;
+  right: 0;
+
+  width: 250px;
+
+  background: #ffffff;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.18);
+
+  border:
+    1px solid #e8edf4;
+
+  overflow: hidden;
+
+  z-index: 1000;
+
+  animation:
+    dropdownIn 0.18s ease-out;
+}
+
+
+@keyframes dropdownIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Dropdown header */
+
+.profile-dropdown-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 16px;
+}
+
+.profile-dropdown-header strong {
+  display: block;
+
+  font-size: 14px;
+
+  color: #172033;
+}
+
+.profile-dropdown-header span {
+  display: block;
+
+  font-size: 12px;
+
+  color: #7a8797;
+
+  margin-top: 3px;
+
+  max-width: 150px;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+
+/* Divider */
+
+.dropdown-divider {
+  height: 1px;
+
+  background: #edf1f5;
+}
+
+
+/* Dropdown item */
+
+.profile-dropdown-item {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 12px 15px;
+
+  text-decoration: none;
+
+  border: none;
+
+  background: #ffffff;
+
+  color: #333b48;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.profile-dropdown-item:hover {
+  background: #f3f7ff;
+
+  color: var(--blue);
+}
+
+
+/* Logout */
+
+.logout-item {
+  color: #e53935;
+}
+
+.logout-item:hover {
+  background: #fff5f5;
+
+  color: #d32f2f;
+}
+
+
+/* =========================================
+   NOTIFICATION
+========================================= */
+
+.notification-container {
+  position: relative;
+}
+
+
+/* Bell button */
+
+.notification-button {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.11);
+
+  background:
+    rgba(255, 255, 255, 0.06);
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  border-radius: 50%;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.notification-button:hover {
+  background:
+    rgba(79, 140, 255, 0.16);
+
+  border-color:
+    rgba(79, 140, 255, 0.4);
+
+  transform: translateY(-1px);
+}
+
+
+/* Badge */
+
+.notification-badge {
+  position: absolute;
+
+  top: -2px;
+  right: -2px;
+
+  min-width: 17px;
+  height: 17px;
+
+  padding: 0 4px;
+
+  border-radius: 20px;
+
+  color: #ffffff;
+
+  background:
+    var(--red);
+
+  border:
+    2px solid var(--navy);
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================================
+   NOTIFICATION DROPDOWN
+========================================= */
+
+.notification-dropdown {
+  position: absolute;
+
+  top: 53px;
+  right: 0;
+
+  width: 350px;
+
+  max-width: calc(100vw - 30px);
+
+  background: #ffffff;
+
+  border-radius: 14px;
+
+  border: 1px solid #e8edf4;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.18);
+
+  overflow: hidden;
+
+  z-index: 1000;
+
+  animation:
+    dropdownIn 0.18s ease-out;
+}
+
+
+/* Notification header */
+
+.notification-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 15px;
+
+  border-bottom:
+    1px solid #edf1f5;
+}
+
+.notification-header h3 {
+  margin: 0;
+
+  font-size: 16px;
+
+  color: #172033;
+}
+
+.notification-header button {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  border: none;
+
+  background: transparent;
+
+  color: var(--blue);
+
+  cursor: pointer;
+
+  font-size: 12px;
+}
+
+
+/* Notification list */
+
+.notification-list {
+  max-height: 350px;
+
+  overflow-y: auto;
+}
+
+
+/* Notification item */
+
+.notification-item {
+  display: flex;
+
+  gap: 10px;
+
+  padding: 14px;
+
+  cursor: pointer;
+
+  border-bottom:
+    1px solid #f1f3f6;
+
+  transition:
+    background 0.2s ease;
+}
+
+.notification-item:hover {
+  background: #f7faff;
+}
+
+.notification-item.unread {
+  background: #f0f6ff;
+}
+
+
+/* Dot */
+
+.notification-dot {
+  width: 7px;
+  height: 7px;
+
+  background: var(--blue);
+
+  border-radius: 50%;
+
+  margin-top: 6px;
+
+  flex-shrink: 0;
+}
+
+.notification-item:not(.unread) .notification-dot {
+  background: #cbd5e1;
+}
+
+
+/* Text */
+
+.notification-item strong {
+  display: block;
+
+  font-size: 13px;
+
+  color: #222b38;
+}
+
+.notification-item p {
+  margin: 4px 0 0;
+
+  font-size: 12px;
+
+  color: #778294;
+
+  line-height: 1.4;
+}
+
+
+/* Footer */
+
+.notification-footer {
+  padding: 12px;
+
+  text-align: center;
+
+  border-top:
+    1px solid #edf1f5;
+}
+
+.notification-footer button {
+  border: none;
+
+  background: transparent;
+
+  color: var(--blue);
+
+  cursor: pointer;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+
+/* Empty */
+
+.empty-notifications {
+  padding: 35px 15px;
+
+  text-align: center;
+
+  color: #999;
+}
+
+.empty-notifications p {
+  margin: 8px 0 0;
+}
+
+
+/* =========================================
+   TABLET / MOBILE
+========================================= */
+
 @media (max-width: 900px) {
+
+  .sa-header {
+    padding: 13px 0;
+  }
+
+  .sa-container {
+    padding: 0 18px;
+  }
+
   .sa-nav,
   .sa-buttons {
     display: none;
   }
 
   .sa-mobile-icon {
-    display: block;
-    color: #000;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
   }
 
   .sa-mobile-menu {
     display: flex;
   }
 
-  .w-full {
+  .sa-mobile-menu .btn-filled,
+  .sa-mobile-menu .btn-outline {
     width: 100%;
   }
-  .btn-outline{
-padding: 12px 22px;
-  background: var(--red);
-  border: none;
-  color: var(--white);
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s;
-  }
-  .sa-mobile-menu a {
-  color: var(--white);
-  text-decoration: none;
-  font-size: 17px;
-  transition: 0.3s;
-  text-align: center;
 }
+
+
+/* =========================================
+   MOBILE PROFILE / NOTIFICATION
+========================================= */
+
+@media (max-width: 900px) {
+
+  .sa-mobile-menu .sa-buttons2 {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    padding-top: 8px;
+  }
+
+  .sa-mobile-menu .profile-dropdown,
+  .sa-mobile-menu .notification-dropdown {
+    position: fixed;
+
+    top: 80px;
+
+    right: 15px;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .sa-logo {
+    font-size: 23px;
+  }
+
+  .sa-logo svg {
+    width: 27px;
+    height: 27px;
+  }
+
+  .sa-mobile-menu {
+    padding: 18px;
+  }
+
+  .notification-dropdown {
+    width: calc(100vw - 30px);
+
+    right: -5px;
+  }
+
+  .profile-dropdown {
+    width: 230px;
+  }
 }

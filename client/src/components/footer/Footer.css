@@ -1,176 +1,549 @@
+/* =========================================
+   SKILLARENA FOOTER
+========================================= */
+
 :root {
-  --red: #ff3b30;
-  --blue: #147aff;
-  --black: #000;
-  --white: #ffffffe1;
-  --gray: #111;
+  --footer-bg: #102c4a;
+  --footer-bg-dark: #0b2037;
+  --footer-blue: #4f8cff;
+  --footer-purple: #8065ff;
+  --footer-red: #ff3b30;
+  --footer-white: #ffffff;
+  --footer-muted: #aebdcd;
+  --footer-border: rgba(255, 255, 255, 0.09);
 }
 
-/* FOOTER SECTION */
+
+/* =========================================
+   FOOTER
+========================================= */
+
 .sa-footer {
-  /* background: var(--white); */
-  background-color: #102C4A;
+  position: relative;
 
-  color: var(--black);
-  padding: 60px 30px 30px 30px;
-  font-family: 'Poppins', sans-serif;
+  width: 100%;
+
+  padding: 70px 30px 25px;
+
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at 15% 10%,
+      rgba(79, 140, 255, 0.12),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(128, 101, 255, 0.10),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #102c4a,
+      #0b2037
+    );
+
+  color: var(--footer-white);
+
+  font-family: "Poppins", sans-serif;
+
+  overflow: hidden;
 }
 
-/* TOP SECTION */
+
+/* =========================================
+   TOP SECTION
+========================================= */
+
 .footer-top {
+  width: 100%;
+  max-width: 1250px;
+
+  margin: 0 auto;
+
   display: flex;
-  flex-wrap: wrap;
+
   justify-content: space-between;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  padding-bottom: 40px;
-  margin-bottom: 30px;
-  color: white;
+
+  gap: 70px;
+
+  padding-bottom: 50px;
+
+  border-bottom: 1px solid var(--footer-border);
 }
 
-/* LOGO */
+
+/* =========================================
+   LOGO / BRAND
+========================================= */
+
 .footer-logo {
-  flex: 1 1 250px;
-  margin-bottom: 20px;
+  flex: 1 1 280px;
+
+  max-width: 330px;
 }
+
 
 .footer-logo h2 {
+  margin: 0 0 14px;
+
   font-size: 2rem;
+
   font-weight: 800;
-  margin-bottom: 10px;
-  color: #ff3b30;
+
+  letter-spacing: -0.7px;
+
+  color: var(--footer-white);
 }
+
+
+.footer-logo h2 .blue-text {
+  color: var(--footer-blue);
+}
+
 
 .footer-logo p {
-  font-size: 0.95rem;
-  opacity: 0.8;
-  color: #fff;
+  margin: 0;
+
+  color: var(--footer-muted);
+
+  font-size: 14px;
+
+  line-height: 1.8;
 }
 
-/* LINKS BLOCK */
+
+/* =========================================
+   LINKS AREA
+========================================= */
+
 .footer-links {
-  flex: 3 1 600px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  flex: 2 1 700px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(150px, 1fr));
+
+  gap: 45px;
 }
+
+
+/* =========================================
+   LINK BLOCK
+========================================= */
 
 .link-block {
-  margin-bottom: 20px;
+  min-width: 0;
 }
 
+
 .link-block h4 {
-  font-size: 1.1rem;
+  position: relative;
+
+  margin: 0 0 20px;
+
+  padding-bottom: 10px;
+
+  color: var(--footer-white);
+
+  font-size: 15px;
+
   font-weight: 700;
-  margin-bottom: 15px;
-  color:#ff3b30;
 }
+
+
+/* Small accent under headings */
+
+.link-block h4::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 28px;
+  height: 2px;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--footer-blue),
+      var(--footer-purple)
+    );
+}
+
+
+/* =========================================
+   LINKS
+========================================= */
 
 .link-block a {
   display: block;
-  color: var(--white);
+
+  width: fit-content;
+
+  margin-bottom: 12px;
+
+  color: var(--footer-muted);
+
   text-decoration: none;
-  font-size: 0.95rem;
-  margin-bottom: 10px;
-  transition: 0.3s ease;
-  color: white;
+
+  font-size: 13px;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
 }
-.link-block p{
-  color: #fff;
-}
+
 
 .link-block a:hover {
-  color: var(--blue);
+  color: var(--footer-blue);
+
+  transform: translateX(4px);
 }
 
-/* SOCIAL ICONS */
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.link-block p {
+  margin: 0 0 12px;
+
+  color: var(--footer-muted);
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   SOCIAL ICONS
+========================================= */
+
 .social-icons {
   display: flex;
-  gap: 15px;
-  margin-top: 10px;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 20px;
 }
+
 
 .social-icons a {
-  color: var(--white);
-  transition: 0.3s ease;
-}
+  width: 38px;
+  height: 38px;
 
-.social-icons a:hover {
-  color: var(--blue);
-}
-
-/* BOTTOM SECTION */
-.footer-bottom {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  font-size: 0.9rem;
-  opacity: 0.7;
-  color: white;
-}
 
-.footer-bottom p {
-  margin: 5px 0;
-  color: white;
-}
-
-/* BLUE TEXT */
-.blue-text {
-  color: var(--blue);
-}
-/* ===== SCROLL TO TOP BUTTON ===== */
-.scroll-top-btn {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  border: none;
-  background: linear-gradient(135deg, #2563eb, #4f46e5);
-  color: #fff;
-  cursor: pointer;
-  display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 12px 30px rgba(79, 70, 229, 0.45);
-  transition: all 0.35s ease;
+
+  margin: 0;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.10);
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.05);
+
+  color: var(--footer-muted);
+
+  transition:
+    all 0.3s ease;
+}
+
+
+.social-icons a:hover {
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--footer-blue),
+      var(--footer-purple)
+    );
+
+  border-color: transparent;
+
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 8px 20px
+    rgba(79, 140, 255, 0.25);
+}
+
+
+/* =========================================
+   BOTTOM SECTION
+========================================= */
+
+.footer-bottom {
+  width: 100%;
+  max-width: 1250px;
+
+  margin: 0 auto;
+
+  padding-top: 25px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  color: var(--footer-muted);
+
+  font-size: 12px;
+}
+
+
+.footer-bottom p {
+  margin: 0;
+
+  color: var(--footer-muted);
+}
+
+
+/* =========================================
+   SCROLL TO TOP
+========================================= */
+
+.scroll-top-btn {
+  position: fixed;
+
+  right: 30px;
+  bottom: 30px;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.10);
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #397cf4,
+      #655fff
+    );
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 12px 30px
+    rgba(55, 124, 244, 0.30);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    filter 0.3s ease;
+
   z-index: 999;
 }
 
+
 .scroll-top-btn:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(79, 70, 229, 0.6);
+  transform: translateY(-5px);
+
+  filter: brightness(1.08);
+
+  box-shadow:
+    0 18px 38px
+    rgba(55, 124, 244, 0.42);
 }
 
-/* Optional: hide on very small screens */
 
+/* =========================================
+   TABLET
+========================================= */
 
-
-/* RESPONSIVE */
 @media (max-width: 900px) {
+
+  .sa-footer {
+    padding: 60px 25px 25px;
+  }
+
+
   .footer-top {
     flex-direction: column;
+
+    gap: 45px;
+  }
+
+
+  .footer-logo {
+    max-width: 600px;
+  }
+
+
+  .footer-links {
+    width: 100%;
+
+    grid-template-columns:
+      repeat(3, 1fr);
+
     gap: 30px;
   }
 
-  .footer-links {
-    flex-direction: column;
-    gap: 20px;
-  }
 
   .footer-bottom {
     flex-direction: column;
+
+    justify-content: center;
+
     text-align: center;
-    gap: 10px;
+
+    gap: 8px;
   }
 }
 
- @media (max-width: 480px) {
-  .scroll-top-btn {
-    bottom: 20px;
-    right: 20px;
-    width: 46px;
-    height: 46px;
-  } 
 
- }
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .sa-footer {
+    padding: 50px 20px 25px;
+  }
+
+
+  .footer-top {
+    gap: 40px;
+
+    padding-bottom: 35px;
+  }
+
+
+  .footer-logo {
+    text-align: center;
+
+    margin: 0 auto;
+
+    max-width: 350px;
+  }
+
+
+  .footer-logo h2 {
+    font-size: 1.8rem;
+  }
+
+
+  .footer-logo p {
+    font-size: 13px;
+  }
+
+
+  .footer-links {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 35px 25px;
+  }
+
+
+  .link-block:last-child {
+    grid-column: 1 / -1;
+  }
+
+
+  .link-block h4 {
+    font-size: 14px;
+  }
+
+
+  .link-block a,
+  .link-block p {
+    font-size: 12px;
+  }
+
+
+  .social-icons {
+    margin-top: 15px;
+  }
+
+
+  .footer-bottom {
+    padding-top: 20px;
+
+    font-size: 11px;
+  }
+
+
+  .scroll-top-btn {
+    width: 44px;
+    height: 44px;
+
+    right: 18px;
+    bottom: 18px;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+  .footer-links {
+    grid-template-columns: 1fr;
+
+    gap: 28px;
+  }
+
+
+  .link-block:last-child {
+    grid-column: auto;
+  }
+
+
+  .link-block {
+    text-align: center;
+  }
+
+
+  .link-block h4::after {
+    left: 50%;
+
+    transform: translateX(-50%);
+  }
+
+
+  .link-block a {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  .social-icons {
+    justify-content: center;
+  }
+
+
+  .footer-bottom {
+    text-align: center;
+  }
+}

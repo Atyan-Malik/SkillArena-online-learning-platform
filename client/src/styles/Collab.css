@@ -1,177 +1,895 @@
-.contact-wrapper {
-  font-family: "Inter", sans-serif;
-  background: #f8fafc;
-}
+/* =========================================
+   SKILL ARENA CONTACT
+========================================= */
 
-.contact-hero {
-  padding: 100px 20px 90px;
-  text-align: center;
-  color: #ffffff;
+.contact-wrapper {
   position: relative;
 
-  background:
-    radial-gradient(circle at top, rgba(37,99,235,0.35), transparent 60%),
-    linear-gradient(
-      135deg,
-      rgba(15, 23, 42, 0.88),
-      rgba(2, 6, 23, 0.88)
-    ),
-    url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f");
+  min-height: 100vh;
 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  overflow: hidden;
+
+  font-family: "Inter", sans-serif;
+
+  background:
+    linear-gradient(
+      180deg,
+      #071525 0%,
+      #081827 100%
+    );
+
+  color: #ffffff;
 }
 
 
+/* =========================================
+   HERO
+========================================= */
+
+.contact-hero {
+  position: relative;
+
+  padding: 110px 20px 170px;
+
+  text-align: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(79, 140, 255, 0.16),
+      transparent 48%
+    );
+}
+
+.contact-hero > * {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* =========================================
+   HERO BACKGROUND GLOWS
+========================================= */
+
+.contact-glow {
+  position: absolute;
+
+  width: 400px;
+  height: 400px;
+
+  border-radius: 50%;
+
+  filter: blur(120px);
+
+  opacity: 0.08;
+
+  pointer-events: none;
+}
+
+.contact-glow-blue {
+  top: -250px;
+  left: -150px;
+
+  background: #4f8cff;
+}
+
+.contact-glow-coral {
+  right: -180px;
+  bottom: -250px;
+
+  background: #ff5d68;
+}
+
+
+/* =========================================
+   EYEBROW
+========================================= */
+
+.contact-eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 8px 15px;
+
+  margin-bottom: 22px;
+
+  border-radius: 50px;
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+
+  background: rgba(255, 255, 255, 0.035);
+
+  color: #9fb0c4;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.6px;
+}
+
+.contact-eyebrow span {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #4f8cff;
+
+  box-shadow:
+    0 0 10px rgba(79, 140, 255, 0.8);
+}
+
+
+/* =========================================
+   HERO HEADING
+========================================= */
 
 .contact-hero h1 {
-  font-size: 48px;
+  margin: 0;
+
+  font-size: clamp(44px, 6vw, 64px);
+
+  line-height: 1.05;
+
   font-weight: 800;
-  margin-bottom: 12px;
+
+  letter-spacing: -2.5px;
 }
+
+.contact-hero h1 span {
+  background:
+    linear-gradient(
+      90deg,
+      #4f8cff,
+      #8065ff 50%,
+      #ff5d68
+    );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+}
+
+
+/* =========================================
+   HERO DESCRIPTION
+========================================= */
 
 .contact-hero p {
+  max-width: 570px;
+
+  margin: 20px auto 0;
+
+  color: #9fb0c4;
+
   font-size: 16px;
-  color: #cbd5f5;
-  max-width: 520px;
-  margin: auto;
+
+  line-height: 1.7;
 }
 
+
+/* =========================================
+   MAIN CONTACT CONTAINER
+========================================= */
 
 .contact-container {
-  max-width: 1100px;
-  margin: 80px auto 100px; 
-  background: #ffffff;
-  border-radius: 28px;
-  box-shadow: 0 40px 80px rgba(15, 23, 42, 0.18);
+  position: relative;
+
+  z-index: 5;
+
+  max-width: 1120px;
+
+  margin: -80px auto 100px;
+
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
+
+  grid-template-columns: 0.9fr 1.1fr;
+
   overflow: hidden;
-  position: relative; 
-  z-index: 1;
-  bottom: 7rem;
+
+  border-radius: 28px;
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+
+  background: #0a1b2d;
+
+  box-shadow:
+    0 40px 100px rgba(0, 0, 0, 0.35);
 }
 
+
+/* =========================================
+   LEFT - CONTACT INFORMATION
+========================================= */
 
 .contact-info {
-  padding: 50px 40px;
+  position: relative;
+
+  padding: 50px 45px 45px;
+
   background:
-    linear-gradient(180deg, #ffffff, #f8fafc);
+    linear-gradient(
+      145deg,
+      #0b2034,
+      #091a2c
+    );
+
+  border-right: 1px solid rgba(255, 255, 255, 0.07);
 }
+
+
+/* =========================================
+   CONTACT LABEL
+========================================= */
+
+.contact-label {
+  color: #5f94ff;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.6px;
+}
+
+
+/* =========================================
+   LEFT HEADING
+========================================= */
 
 .contact-info h2 {
-  font-size: 26px;
+  margin: 16px 0 0;
+
+  color: #ffffff;
+
+  font-size: 34px;
+
+  line-height: 1.15;
+
   font-weight: 800;
-  color: #0f172a;
-  margin-bottom: 10px;
+
+  letter-spacing: -1.2px;
 }
 
-.contact-info p {
-  font-size: 15px;
-  color: #475569;
-  line-height: 1.7;
-  margin-bottom: 30px;
+.contact-info h2 span {
+  display: block;
+
+  background:
+    linear-gradient(
+      90deg,
+      #4f8cff,
+      #8065ff
+    );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+}
+
+
+/* =========================================
+   LEFT DESCRIPTION
+========================================= */
+
+.contact-description {
+  max-width: 390px;
+
+  margin: 18px 0 30px;
+
+  color: #91a4ba;
+
+  font-size: 14px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================
+   CONTACT ITEMS
+========================================= */
+
+.contact-items {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 23px;
 }
 
 .contact-item {
   display: flex;
+
   align-items: center;
+
   gap: 14px;
-  font-size: 15px;
-  color: #0f172a;
-  margin-bottom: 18px;
 }
 
-.contact-item svg {
-  color: #2563eb;
+
+/* =========================================
+   CONTACT ICON
+========================================= */
+
+.contact-icon {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  color: #5e96ff;
+
+  background: rgba(79, 140, 255, 0.09);
+
+  border: 1px solid rgba(79, 140, 255, 0.14);
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
 }
+
+.contact-item:hover .contact-icon {
+  transform: translateY(-2px);
+
+  background: rgba(79, 140, 255, 0.14);
+
+  border-color: rgba(79, 140, 255, 0.25);
+}
+
+
+/* =========================================
+   CONTACT ITEM TEXT
+========================================= */
+
+.contact-item span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #71869e;
+
+  font-size: 10px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+}
+
+.contact-item strong {
+  color: #dbe5f1;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================
+   COMMUNITY / TRUST BLOCK
+========================================= */
+
+.contact-trust {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-top: 42px;
+
+  padding: 17px;
+
+  border-radius: 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(79, 140, 255, 0.08),
+      rgba(128, 101, 255, 0.04)
+    );
+
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+.contact-trust:hover {
+  border-color: rgba(79, 140, 255, 0.16);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(79, 140, 255, 0.11),
+      rgba(128, 101, 255, 0.06)
+    );
+}
+
+
+/* =========================================
+   TRUST AVATARS
+========================================= */
+
+.trust-avatars {
+  display: flex;
+
+  align-items: center;
+
+  flex-shrink: 0;
+}
+
+.trust-avatars span {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-left: -7px;
+
+  border-radius: 50%;
+
+  border: 2px solid #0b2034;
+
+  background:
+    linear-gradient(
+      135deg,
+      #4f8cff,
+      #8065ff
+    );
+
+  color: #ffffff;
+
+  font-size: 9px;
+
+  font-weight: 800;
+}
+
+.trust-avatars span:first-child {
+  margin-left: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      #4f8cff,
+      #8065ff
+    );
+}
+
+.trust-avatars span:nth-child(2) {
+  background:
+    linear-gradient(
+      135deg,
+      #8065ff,
+      #ff5d68
+    );
+}
+
+.trust-avatars span:last-child {
+  background: #132b43;
+
+  color: #8fa7c0;
+}
+
+
+/* =========================================
+   TRUST TEXT
+========================================= */
+
+.trust-text {
+  min-width: 0;
+}
+
+.trust-text strong {
+  display: block;
+
+  color: #dce6f2;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.trust-text p {
+  margin: 4px 0 0;
+
+  color: #7389a1;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   RESPONSE STATUS
+========================================= */
+
+.contact-note {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 25px;
+
+  padding-top: 21px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.contact-note-dot {
+  width: 7px;
+  height: 7px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #55d68a;
+
+  box-shadow:
+    0 0 9px rgba(85, 214, 138, 0.7);
+}
+
+.contact-note p {
+  margin: 0;
+
+  color: #71869e;
+
+  font-size: 10px;
+}
+
+
+/* =========================================
+   RIGHT - CONTACT FORM
+========================================= */
 
 .contact-form {
-  padding: 50px 40px;
-  background: #ffffff;
+  padding: 55px 50px;
+
+  background: #0a1b2d;
 }
+
+
+/* =========================================
+   FORM HEADER
+========================================= */
+
+.form-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 32px;
+}
+
+.form-header span {
+  color: #647b94;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.form-header h3 {
+  margin: 7px 0 0;
+
+  color: #ffffff;
+
+  font-size: 25px;
+
+  font-weight: 750;
+
+  letter-spacing: -0.6px;
+}
+
+
+/* =========================================
+   FORM ARROW
+========================================= */
+
+.form-arrow {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #6a9dff;
+
+  border: 1px solid rgba(79, 140, 255, 0.16);
+
+  background: rgba(79, 140, 255, 0.07);
+}
+
+
+/* =========================================
+   INPUT GROUP
+========================================= */
 
 .input-group {
   display: flex;
+
   flex-direction: column;
-  margin-bottom: 22px;
+
+  margin-bottom: 20px;
 }
 
+
+/* =========================================
+   LABEL
+========================================= */
+
 .input-group label {
-  font-size: 14px;
+  margin-bottom: 8px;
+
+  color: #d0dbe7;
+
+  font-size: 12px;
+
   font-weight: 600;
-  color: #0f172a;
-  margin-bottom: 6px;
 }
+
+
+/* =========================================
+   INPUT + TEXTAREA
+========================================= */
 
 .input-group input,
 .input-group textarea {
-  padding: 14px 16px;
-  border-radius: 14px;
-  border: 1px solid #e2e8f0;
-  font-size: 14px;
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 14px 15px;
+
+  border-radius: 11px;
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+
+  background: #071725;
+
+  color: #ffffff;
+
   font-family: inherit;
-  transition: all 0.3s ease;
+
+  font-size: 13px;
+
+  outline: none;
+
   resize: none;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
 }
+
+.input-group textarea {
+  min-height: 135px;
+}
+
+
+/* =========================================
+   PLACEHOLDER
+========================================= */
 
 .input-group input::placeholder,
 .input-group textarea::placeholder {
-  color: #94a3b8;
+  color: #536a82;
 }
+
+
+/* =========================================
+   INPUT HOVER
+========================================= */
+
+.input-group input:hover,
+.input-group textarea:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+
+/* =========================================
+   INPUT FOCUS
+========================================= */
 
 .input-group input:focus,
 .input-group textarea:focus {
-  outline: none;
-  border-color: #2563eb;
-  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+  border-color: #4f8cff;
+
+  background: #081a2b;
+
+  box-shadow:
+    0 0 0 3px rgba(79, 140, 255, 0.10);
 }
+
+
+/* =========================================
+   SEND BUTTON
+========================================= */
 
 .send-btn {
   width: 100%;
-  padding: 14px;
-  border-radius: 999px;
-  border: none;
-  background: linear-gradient(90deg, #2563eb, #dc2626);
-  color: #ffffff;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
+
   display: flex;
+
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  transition: all 0.35s ease;
+
+  gap: 9px;
+
+  padding: 14px;
+
+  margin-top: 5px;
+
+  border: none;
+
+  border-radius: 11px;
+
+  background:
+    linear-gradient(
+      100deg,
+      #397cf4,
+      #655fff
+    );
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 12px 30px rgba(59, 130, 246, 0.18);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    opacity 0.3s ease;
 }
 
 .send-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 16px 35px rgba(37, 99, 235, 0.35);
+
+  box-shadow:
+    0 17px 35px rgba(79, 140, 255, 0.28);
+}
+
+.send-btn:active {
+  transform: translateY(0);
 }
 
 .send-btn:disabled {
-  opacity: 0.7;
+  opacity: 0.6;
+
   cursor: not-allowed;
+
+  transform: none;
+
+  box-shadow: none;
 }
+
+
+/* =========================================
+   RESPONSIVE - TABLET
+========================================= */
 
 @media (max-width: 900px) {
+
   .contact-container {
     grid-template-columns: 1fr;
+
+    margin-left: 20px;
+    margin-right: 20px;
   }
 
-  .contact-hero h1 {
-    font-size: 38px;
+  .contact-info {
+    border-right: none;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   }
+
 }
 
-@media (max-width: 480px) {
+
+/* =========================================
+   RESPONSIVE - MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .contact-hero {
+    padding: 85px 20px 140px;
+  }
+
   .contact-hero h1 {
-    font-size: 32px;
+    font-size: 42px;
+
+    letter-spacing: -1.8px;
+  }
+
+  .contact-hero p {
+    font-size: 14px;
+  }
+
+  .contact-container {
+    margin-top: -65px;
+
+    border-radius: 22px;
   }
 
   .contact-info,
   .contact-form {
-    padding: 36px 26px;
+    padding: 38px 25px;
   }
+
+  .contact-info h2 {
+    font-size: 30px;
+  }
+
+  .contact-description {
+    font-size: 13px;
+  }
+
+  .contact-trust {
+    padding: 14px;
+
+    gap: 11px;
+  }
+
+  .trust-avatars span {
+    width: 32px;
+    height: 32px;
+
+    font-size: 8px;
+  }
+
+  .trust-text strong {
+    font-size: 11px;
+  }
+
+  .trust-text p {
+    font-size: 9px;
+  }
+
+  .form-header h3 {
+    font-size: 22px;
+  }
+
+  .form-arrow {
+    width: 38px;
+    height: 38px;
+  }
+
 }

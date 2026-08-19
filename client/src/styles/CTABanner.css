@@ -1,80 +1,430 @@
-:root {
-  --red: #ff3b30;
-  --blue: #147aff;
-  --black: #000;
-  --white: #fff;
-  --gray: #111;
-}
+/* =========================================
+   SKILLARENA CTA BANNER
+========================================= */
 
 .sa-cta-banner {
-  width: 100%;
-  padding: 100px 0;
-  background: #0f172a;
-  color: var(--white);
   position: relative;
+
+  width: calc(100% - 40px);
+  max-width: 1180px;
+
+  margin: 70px auto;
+  padding: 80px 30px;
+
+  box-sizing: border-box;
+
   overflow: hidden;
-  text-align: center;
-  border-radius: 30px;
-  margin: 80px 0;
-  background-image: url("./student8.jpg");
-    background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  opacity: .8;
+
+  border-radius: 28px;
+
+  color: #ffffff;
+
+  background:
+    url("./student8.jpg")
+    center / cover
+    no-repeat;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 25px 65px rgba(7, 21, 37, 0.22);
 }
 
-.cta-container {
+
+/* =========================================
+   DARK OVERLAY
+========================================= */
+
+.sa-cta-banner::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      120deg,
+      rgba(5, 18, 32, 0.95),
+      rgba(7, 25, 43, 0.88),
+      rgba(9, 25, 48, 0.82)
+    );
+
+  z-index: 0;
+}
+
+
+/* =========================================
+   BLUE GLOW
+========================================= */
+
+.sa-cta-banner::after {
+  content: "";
+
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  top: -280px;
+  left: 35%;
+
+  border-radius: 50%;
+
+  background: rgba(79, 140, 255, 0.18);
+
+  filter: blur(100px);
+
+  z-index: 0;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   CTA CONTAINER
+========================================= */
+
+.sa-cta-banner .cta-container {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
   max-width: 1000px;
-  margin: auto;
-  padding: 0 20px;
+
+  margin: 0 auto;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 40px;
 }
 
-.cta-text h2 {
-  font-size: 3rem;
+
+/* =========================================
+   CTA TEXT
+========================================= */
+
+.sa-cta-banner .cta-text {
+  flex: 1;
+
+  min-width: 0;
+
+  max-width: 680px;
+}
+
+
+/* =========================================
+   EYEBROW
+========================================= */
+
+.sa-cta-banner .cta-eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  margin-bottom: 16px;
+
+  padding: 7px 13px;
+
+  border-radius: 50px;
+
+  border: 1px solid rgba(79, 140, 255, 0.22);
+
+  background: rgba(79, 140, 255, 0.08);
+
+  color: #72a2ff;
+
+  font-size: 9px;
+
   font-weight: 800;
-  margin-bottom: 20px;
+
+  letter-spacing: 1.4px;
+
+  white-space: nowrap;
 }
 
-.cta-text p {
-  font-size: 1.2rem;
-  opacity: 0.85;
-  margin-bottom: 35px;
-  color: black;
-  font-weight: bold;
+
+/* =========================================
+   HEADING
+========================================= */
+
+.sa-cta-banner .cta-text h2 {
+  margin: 0 0 15px;
+
+  color: #f5f8fc;
+
+  font-size: clamp(2rem, 4vw, 3.5rem);
+
+  line-height: 1.12;
+
+  font-weight: 800;
+
+  letter-spacing: -1.5px;
+
+  overflow-wrap: break-word;
 }
 
-.cta-button button {
-  background: var(--white);
-  color: var(--black);
-  padding: 15px 40px;
-  font-size: 1.1rem;
+
+/* =========================================
+   GRADIENT HEADING
+========================================= */
+
+.sa-cta-banner .cta-text h2 span {
+  background:
+    linear-gradient(
+      90deg,
+      #4f8cff,
+      #8065ff
+    );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.sa-cta-banner .cta-text p {
+  max-width: 580px;
+
+  margin: 0;
+
+  color: #b2c1d0;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+
+  font-weight: 400;
+}
+
+
+/* =========================================
+   BUTTON WRAPPER
+========================================= */
+
+.sa-cta-banner .cta-button {
+  flex: 0 0 auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+/* =========================================
+   CTA BUTTON
+========================================= */
+
+.sa-cta-banner .batn {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  min-width: 175px;
+
+  padding: 14px 21px;
+
+  box-sizing: border-box;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 11px;
+
+  background:
+    linear-gradient(
+      100deg,
+      #397cf4,
+      #655fff
+    );
+
+  color: #ffffff;
+
+  font-size: 11px;
+
   font-weight: 700;
-  border-radius: 12px;
-  border: none;
+
   cursor: pointer;
-  transition: 0.3s ease;
+
+  white-space: nowrap;
+
+  box-shadow:
+    0 12px 28px rgba(55, 124, 244, 0.25);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    filter 0.3s ease;
 }
 
-.cta-button button:hover {
-  background: var(--blue);
-  color: var(--white);
+
+/* =========================================
+   BUTTON HOVER
+========================================= */
+
+.sa-cta-banner .batn:hover {
+  transform: translateY(-3px);
+
+  filter: brightness(1.08);
+
+  box-shadow:
+    0 18px 38px rgba(55, 124, 244, 0.35);
 }
 
-.blue-text {
-  color: var(--blue);
+
+.sa-cta-banner .batn svg {
+  transition: transform 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  .cta-text h2 {
-    font-size: 2.2rem;
+
+.sa-cta-banner .batn:hover svg {
+  transform: translateX(3px);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .sa-cta-banner {
+    width: calc(100% - 32px);
+
+    padding: 65px 28px;
   }
 
-  .cta-text p {
-    font-size: 1rem;
+  .sa-cta-banner .cta-container {
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    gap: 28px;
   }
 
-  .cta-button button {
-    padding: 12px 30px;
-    font-size: 1rem;
+  .sa-cta-banner .cta-text {
+    width: 100%;
+
+    max-width: 680px;
+  }
+
+  .sa-cta-banner .cta-text p {
+    margin: 0 auto;
+  }
+
+  .sa-cta-banner .cta-button {
+    width: auto;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .sa-cta-banner {
+    width: calc(100% - 24px);
+
+    margin: 50px auto;
+
+    padding: 55px 20px;
+
+    border-radius: 22px;
+  }
+
+  .sa-cta-banner .cta-container {
+    padding: 0;
+
+    gap: 24px;
+  }
+
+  .sa-cta-banner .cta-eyebrow {
+    font-size: 8px;
+
+    padding: 6px 11px;
+  }
+
+  .sa-cta-banner .cta-text h2 {
+    font-size: 2rem;
+
+    line-height: 1.15;
+
+    letter-spacing: -0.8px;
+  }
+
+  .sa-cta-banner .cta-text p {
+    font-size: 12px;
+
+    line-height: 1.65;
+  }
+
+  .sa-cta-banner .cta-button {
+    width: 100%;
+  }
+
+  .sa-cta-banner .batn {
+    width: 100%;
+
+    max-width: 280px;
+
+    min-width: 0;
+
+    padding: 14px 20px;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+  .sa-cta-banner {
+    width: calc(100% - 18px);
+
+    padding: 45px 16px;
+
+    border-radius: 20px;
+  }
+
+  .sa-cta-banner .cta-text h2 {
+    font-size: 1.75rem;
+  }
+
+  .sa-cta-banner .cta-text p {
+    font-size: 11px;
+  }
+
+  .sa-cta-banner .batn {
+    max-width: 100%;
   }
 }

@@ -1,48 +1,103 @@
 import React from "react";
 import "../styles/HighlightFeature.css";
-import { GraduationCap, Award, Laptop, Users } from "lucide-react";
+import {
+  GraduationCap,
+  Award,
+  Laptop,
+  Users,
+  ArrowUpRight,
+} from "lucide-react";
 
 const Features = () => {
   const featureData = [
     {
-      icon: <GraduationCap className="feature-icon" size={32} />,
+      icon: GraduationCap,
       title: "Expert-Led Courses",
-      desc: "Learn from top instructors, industry leaders, and certified professionals worldwide."
+      desc: "Learn from top instructors, industry leaders, and certified professionals worldwide.",
+      accent: "blue",
     },
     {
-      icon: <Laptop className="feature-icon" size={32} />,
+      icon: Laptop,
       title: "Hands-On Learning",
-      desc: "Practical projects, real-world tasks, and interactive exercises to build job-ready skills."
+      desc: "Build real-world skills through practical projects, interactive exercises, and industry tasks.",
+      accent: "coral",
     },
     {
-      icon: <Award className="feature-icon" size={32} />,
+      icon: Award,
       title: "Earn Certificates",
-      desc: "Get globally recognized certificates that help you stand out in the job market."
+      desc: "Earn professional certificates that showcase your skills and help you stand out in the job market.",
+      accent: "purple",
     },
     {
-      icon: <Users className="feature-icon" size={32} />,
+      icon: Users,
       title: "Community Support",
-      desc: "Join a growing community of learners and get help from peers and mentors."
+      desc: "Connect with learners, mentors, and professionals while growing your skills together.",
+      accent: "pink",
     },
   ];
 
   return (
     <section className="sa-features">
+      {/* Background decoration */}
+      <div className="features-glow features-glow-one"></div>
+      <div className="features-glow features-glow-two"></div>
+
       <div className="features-container">
 
+        {/* Section Header */}
         <div className="features-header">
-          <h2>Why Choose <span className="blue-text">SkillArena?</span></h2>
-          <p>World-class learning experience designed for students, instructors, and professionals.</p>
+
+          <span className="section-badge">
+            <span className="badge-dot"></span>
+            WHY SKILL ARENA
+          </span>
+
+          <h2>
+            Everything You Need to{" "}
+            <span className="gradient-text">Grow Your Skills</span>
+          </h2>
+
+          <p>
+            A world-class learning experience designed to help you learn,
+            practice, connect, and build a career you are proud of.
+          </p>
+
         </div>
 
+        {/* Features */}
         <div className="features-grid">
-          {featureData.map((f, i) => (
-            <div key={i} className="feature-card">
-              <div className="icon-wrapper">{f.icon}</div>
-              <h3>{f.title}</h3>
-              <p>{f.desc}</p>
-            </div>
-          ))}
+          {featureData.map((feature, index) => {
+            const Icon = feature.icon;
+
+            return (
+              <div
+                key={index}
+                className={`feature-card ${feature.accent}`}
+              >
+                {/* Top glow */}
+                <div className="card-glow"></div>
+
+                <div className="feature-card-top">
+                  <div className="icon-wrapper">
+                    <Icon size={30} strokeWidth={1.8} />
+                  </div>
+
+                  <span className="feature-number">
+                    0{index + 1}
+                  </span>
+                </div>
+
+                <div className="feature-content">
+                  <h3>{feature.title}</h3>
+
+                  <p>{feature.desc}</p>
+                </div>
+
+               
+
+              </div>
+            );
+          })}
         </div>
 
       </div>

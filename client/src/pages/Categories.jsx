@@ -6,16 +6,17 @@ import {
   BarChart2,
   Cpu,
   Camera,
-  TrendingUp
+  TrendingUp,
+  ArrowUpRight,
 } from "lucide-react";
 
 const iconMap = {
-  Code: Code,
-  PenTool: PenTool,
-  BarChart2: BarChart2,
-  Cpu: Cpu,
-  Camera: Camera,
-  TrendingUp: TrendingUp
+  Code,
+  PenTool,
+  BarChart2,
+  Cpu,
+  Camera,
+  TrendingUp,
 };
 
 const PopularCategories = () => {
@@ -37,36 +38,86 @@ const PopularCategories = () => {
 
   return (
     <section className="sa-categories">
+      {/* Ambient background */}
+      <div className="categories-orb categories-orb-one"></div>
+      <div className="categories-orb categories-orb-two"></div>
+
       <div className="categories-container">
+
+        {/* Header */}
         <div className="categories-header">
+
+          <span className="category-badge">
+            <span className="category-badge-dot"></span>
+            EXPLORE & LEARN
+          </span>
+
           <h2>
-            Explore <span className="blue-text">Popular Categories</span>
+            Explore{" "}
+            <span className="gradient-text">
+              Popular Categories
+            </span>
           </h2>
-          <p>Browse courses by your favorite topics and start learning today!</p>
+
+          <p>
+            Discover in-demand skills, explore new interests, and find
+            courses designed to help you move your career forward.
+          </p>
+
         </div>
 
+        {/* Categories */}
         <div className="categories-grid">
-          {categories.map((cat) => {
-            const Icon = iconMap[cat.icon];
+
+          {categories.map((cat, index) => {
+            const Icon = iconMap[cat.icon] || Code;
 
             return (
               <div
                 key={cat._id}
-                className="category-card premium"
+                className="category-card"
                 style={{ "--accent": cat.color }}
               >
-                <div className="category-icon">
-                  <Icon size={30} />
+
+                {/* Hover glow */}
+                <div className="category-glow"></div>
+
+                {/* Top row */}
+                <div className="category-top">
+
+                  <div className="category-icon">
+                    <Icon size={29} strokeWidth={1.8} />
+                  </div>
+
+                  <span className="category-index">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
                 </div>
 
-                <h3>{cat.title}</h3>
-                <p className="course-count">
-                  {cat.courseCount}+ Courses
-                </p>
+                {/* Content */}
+                <div className="category-content">
+
+                  <h3>{cat.title}</h3>
+
+                  <p className="course-count">
+                    {cat.courseCount}+ Courses
+                  </p>
+
+                </div>
+
+                {/* Bottom action */}
+                <div className="category-action">
+                  <span>Explore category</span>
+                  <ArrowUpRight size={17} />
+                </div>
+
               </div>
             );
           })}
+
         </div>
+
       </div>
     </section>
   );

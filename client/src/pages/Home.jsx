@@ -62,7 +62,7 @@ const Hero = () => {
     </section>
 
     <HighlightFeature/>
-    <Categories/> <br />
+    <Categories/> 
     <Allcourses/>
     <Gallery/>
     <FAQSection/>

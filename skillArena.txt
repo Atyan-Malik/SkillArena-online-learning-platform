@@ -1,0 +1,7 @@
+#project goals
+1)adding users profile and notifications in place of registration and login btn in navbar when a user verified and registered successfully.
+2)adding continue with google feature in registered form and SMTP for user email verification
+3)impliment payment feature with strip implimentation
+4)complete implimentation of notification system
+5)complete setup of settings connected and fuctional with website
+6)docker and deployment

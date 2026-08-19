@@ -34,6 +34,11 @@ import AdminSettings from "../pages/admin/settings/AdminSettings.jsx";
 import FAQSection from "../pages/FAQSection.jsx";
 import EnrollCourses from "../pages/students/EnrollCourses.jsx";
 import Enrollments from "../pages/students/Enrollments.jsx";
+import Profile from "../pages/Profile.jsx";
+import Settings from "../pages/Settings.jsx";
+import ForgotPassword from "../pages/ForgotPassword";
+import ResetPassword from "../pages/ResetPassword";
+import PhoneLogin from "../pages/PhoneLogin";
 
 function App() {
   const user = JSON.parse(localStorage.getItem("user")) || null;
@@ -58,14 +63,22 @@ function App() {
         <Route path="/paidcourses" element={<Payment />} />
         <Route path="/paynow" element={<PaymentModal />} />
         <Route path="/instructor" element={<InstructorShowcase />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/Settings" element={<Settings />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password/:token" element={<ResetPassword />} />
+        <Route path="/phone-login" element={<PhoneLogin />} />
 
         <Route element={<ProtectedRoute allowedRoles={["student"]} />}>
-          <Route path="/dashboard" element={<DashboardLayout user={user} />}>
+          <Route
+            path="/dashboard/student"
+            element={<DashboardLayout user={user} />}
+          >
             <Route index element={<StudentDashboard />} />
             <Route path="enrollcourses" element={<EnrollCourses />} />
             <Route path="enrollments/:id" element={<Enrollments />} />
 
-            <Route path="recommendedcourses" element={<RecommendedCourses />} />
+            <Route path="allstudents" element={<RecommendedCourses />} />
             <Route path="certificates" element={<Certificates />} />
             <Route path="payments" element={<Payment />} />
           </Route>
