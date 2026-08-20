@@ -217,7 +217,7 @@ const Register = () => {
             }}
           >
             <input
-              style={{ fontSize: "18px" }}
+            
               type="checkbox"
               id="terms"
               checked={agreed}
@@ -225,6 +225,7 @@ const Register = () => {
               style={{
                 marginTop: "3px",
                 cursor: "pointer",
+                fontSize: "18px"
               }}
             />
 
