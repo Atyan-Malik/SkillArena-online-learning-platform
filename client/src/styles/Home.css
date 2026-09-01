@@ -13,11 +13,9 @@
   box-sizing: border-box;
 
   color: #ffffff;
+background:
+  url("/home-back2.webp") center / cover no-repeat;
 
-  background:
-    url("./home-back2.webp")
-    center / cover
-    no-repeat;
 
   overflow: hidden;
 
