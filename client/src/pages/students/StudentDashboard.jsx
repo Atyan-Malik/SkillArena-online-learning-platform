@@ -8,7 +8,7 @@ import {
     Hand,
   Rocket,
 } from "lucide-react";
-import "./studentDashboard.css";
+import "./StudentDashboard.css";
 
 const StudentDashboard = () => {
   const courses = [
