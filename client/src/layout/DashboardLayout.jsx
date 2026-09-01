@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import "../styles/DashboardLayout.css";
+import  "../styles/DashboardLayout.css"
 
 import StudentSidebar from "../pages/students/StudentSidebar";
 import InstructorSidebar from "../pages/instructor/InstructorSidebar";
